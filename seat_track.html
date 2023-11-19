@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="js/face-api.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/seat_track.css">
+    </head>
+    <body>
+        <div class="box">
+            <div  style="position: relative">
+                <video id="video" onloadedmetadata="main(this)"  muted autoplay width="640" height="480"></video> 
+                <canvas id="cut" style="  position: absolute;  top: 0; left: 0;"  width="640" height="480"></canvas>
+                <canvas id="farcanvas"  style="  position: absolute;  top: 0; left: 0;"  width="640" height="480"></canvas> 
+                <canvas id="facecanvas" style="  position: absolute;  top: 0; left: 0;" width="640" height="480"></canvas>
+                <canvas id="rec"  style="  position: absolute;  top: 0; left: 0;"  width="640" height="480"></canvas>
+                <canvas id="canvas3"  style="  position: absolute;  top: 0; left: 0;" width="640" height="480"></canvas>
+                <p>使用した音素材：OtoLogic(https://otologic.jp)</p>
+                <h2>parameter</h2>
+                <p>左右</p>
+                <div>
+                    <input type="text" value="60" id="text_lr" size="5">
+                    <input type="button" value="変更" onclick="change_lr()">
+                    <input type="button" value="規定値に戻す" onclick="default_lr()">
+                </div>
+                <p>上</p>
+                <div>
+                    <input type="text" value="50" id="text_up" size="5">
+                    <input type="button" value="変更" onclick="change_up()">
+                    <input type="button" value="規定値に戻す" onclick="default_up()">
+                </div>
+                <p>下</p>
+                <div>
+                    <input type="text" value="40" id="text_down" size="5">
+                    <input type="button" value="変更" onclick="change_down()">
+                    <input type="button" value="規定値に戻す" onclick="default_down()">
+                </div>
+            </div>
+            
+        </div>
+        <div class="box">
+            <div>
+                <input type="button" id="color" onclick="color()" value="color">
+                <input type="button" id="start" onclick="starts()" value="start">
+                <input type="button" id="stop" onclick="stops()" value="stop">
+            </div>
+            <div>
+                <input type="button" id="test1" onclick="test1()" value="test1">
+                <input type="button" id="test2" onclick="test2()" value="test2">
+            </div>
+            <h2 id="angle" style="color:blue; display: block;">angle</h2>
+            <h2 id="angle_count" style="display: block;">Anglecount:</h2>
+            <h2 id="angle_time" style="display: block;">Angletime:</h2>
+            <h2 id="sitdown" style="color: green;">sit down</h2>
+            <h2 id="time">time:</h2>
+        </div>
+        <script src="js/opencv.js"></script>
+        <script src="js/seat_track.js"></script>
+    </body>
+</html>
