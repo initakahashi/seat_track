@@ -635,5 +635,6 @@ videoEl.srcObject = stream;
 $(document).ready(function() {
     run();
     timerInitial();
+　　alert();
 });
 
